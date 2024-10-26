@@ -13,8 +13,8 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-[#FAF6F1] border border-gray flex items-center max-container padding-container fixed top-0 w-full z-50 py-5">
-            {/* Logo Section */}
+<nav className="bg-[#FAF6F1]/90 border border-gray flex items-center max-container padding-container fixed top-0 w-full z-50 py-5">
+{/* Logo Section */}
             <Link href='/'>
                 <Image src="/mantle.png" alt="logo" width={200} height={29} className="ml-4"/>
             </Link>

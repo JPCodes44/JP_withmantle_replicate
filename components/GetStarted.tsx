@@ -2,7 +2,7 @@ import React from 'react';
 
 const GetStarted = () => {
   return (
-    <section className="flex items-center justify-center py-4 bg-[#FAF6F1] p-6">
+    <section className="flex items-center justify-center py-10 bg-[#FAF6F1] p-6">
       <div className="bg-black text-white rounded-2xl px-10 py-16 sm:px-16 sm:py-24 lg:px-24 lg:py-32 max-w-4xl text-center">
         {/* Title */}
         <h2 className="text-3xl sm:text-4xl font-bold mb-6">Get started for free</h2>

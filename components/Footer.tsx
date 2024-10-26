@@ -3,9 +3,7 @@ import { FOOTER_LINKS, SOCIAL_MEDIA_ICONS, CERTIFICATIONS } from '@/constants';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#FAF6F1] py-1">
-            <hr className="border-t border-gray-300 my-6 w-full" />
-
+    <footer className="bg-[#FAF6F1] py-5 border">
       {/* Logo and Links for Large Screens */}
       <div className="hidden md:flex justify-between items-start mb-8 p-10">
         {/* Logo */}
@@ -136,7 +134,6 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <hr className="border-t border-gray-300 w-full" />
     </footer>
   );
 };
