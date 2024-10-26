@@ -16,7 +16,7 @@ const Navbar = () => {
        <nav className="bg-[#FAF6F1] flex items-center max-container padding-container fixed top-0 w-full z-50 py-5">
             {/* Logo Section */}
             <Link href='/'>
-                <Image src="/mantle.png" alt="logo" width={150} height={29} className="ml-4"/>
+                <Image src="/mantle.png" alt="logo" width={200} height={29} className="ml-4"/>
             </Link>
 
             {/* Spacer to push links to the right */}
@@ -38,7 +38,7 @@ const Navbar = () => {
       </ul>
 
             {/* Buttons Section for Larger Screens */}
-            <div className="hidden md:flex space-x-4">
+            <div className="hidden md:flex space-x-4 p-4">
               <button className="border border-black px-8 py-2 rounded-full text-black hover:bg-gray-100 font-medium">
                 Login
               </button>
