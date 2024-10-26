@@ -1,6 +1,6 @@
 const HeroSection = () => {
   return (
-    <section className="bg-[#FAF6F1] py-56 sm:py-32 md:py-48 lg:py-56 flex flex-col items-center justify-center text-center font-sans">
+    <section className="bg-[#FAF6F1] py-56 flex flex-col items-center justify-center text-center font-sans">
       {/* Main Heading */}
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight px-4 sm:px-0 lg:max-w-[40rem]">
         Company
