@@ -3,7 +3,7 @@ import React from 'react';
 
 const FeatureGrid: React.FC = () => {
   return (
-    <section className="py-16 bg-[#FAF6F1]">
+    <section className="py-16 bg-[#FAF6F1] p-4">
       <div className="container mx-auto text-center">
         {/* Title and Description */}
 <p className="text-4xl font-bold text-black mb-6 max-w-4xl mx-auto text-start">
@@ -21,7 +21,7 @@ const FeatureGrid: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {FEATURES.map((feature, index) => (
             <div key={index} className="text-left">
-              <h3 className="text-xl font-semibold text-black mb-2">{feature.title}</h3>
+              <h3 className="lg:text-xl sm:text-sm lg:font-semibold sm:font-light text-black mb-2">{feature.title}</h3>
               <p className="text-gray-600">{feature.description}</p>
             </div>
           ))}
