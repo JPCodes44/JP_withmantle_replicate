@@ -62,26 +62,27 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu */}
-            {isMobileMenuOpen && (
-                <div className="absolute top-24 left-0 w-full bg-[#FAF6F1] shadow-lg lg:hidden">
-                    <ul className="flex flex-col items-center space-y-4 py-4 text-black">
-                        {NAV_LINKS.map((link) => (
-                            <li key={link.key}>
-                                <Link href={link.href} className="regular-16 text-gray-900 flexCenter cursor-pointer transition-all hover:font-bold">
-                                    {link.label}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
+{isMobileMenuOpen && (
+    <div className="absolute top-24 left-0 w-full bg-[#FAF6F1] bg-opacity-90 shadow-lg lg:hidden">
+        <ul className="flex flex-col items-center space-y-4 py-4 text-black">
+            {NAV_LINKS.map((link) => (
+                <li key={link.key}>
+                    <Link href={link.href} className="regular-16 text-gray-900 flexCenter cursor-pointer transition-all hover:font-bold">
+                        {link.label}
+                    </Link>
+                </li>
+            ))}
+        </ul>
 
-                    {/* Login Button in Mobile Menu */}
-                    <div className="flex justify-center py-4">
-                        <button className="border border-black px-8 py-2 rounded-full text-black hover:bg-gray-100 font-medium">
-                            Login
-                        </button>
-                    </div>
-                </div>
-            )}
+        {/* Login Button in Mobile Menu */}
+        <div className="flex justify-center py-4">
+            <button className="border border-black px-8 py-2 rounded-full text-black hover:bg-gray-100 font-medium">
+                Login
+            </button>
+        </div>
+    </div>
+)}
+
         </nav>
     );
 };
