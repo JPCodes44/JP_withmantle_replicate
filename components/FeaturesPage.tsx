@@ -8,7 +8,7 @@ const FeaturesPage = () => {
       <div className="container mx-auto">
         {/* Title and Description */}
         <h2 className="text-3xl font-bold text-center mb-8 text-black">Manage like a pro</h2>
-        <p className="text-center text-gray-500 mb-16">
+        <p className="text-center text-lg text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed">
           Take control of your ownership with a next-generation platform that lets you track, issue, and manage ownership.
           Be your own expert and scale back on your professional fees.
         </p>
