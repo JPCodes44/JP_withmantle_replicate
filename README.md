@@ -1,6 +1,6 @@
 ## Hosted on Vercel
 
-You can check out [The website here:](https://jp-withmantle-replicate-5ygei6beq-justin-maks-projects-297821e4.vercel.app/) - your feedback and contributions are welcome!
+You can check out [The website here](https://jp-withmantle-replicate-5ygei6beq-justin-maks-projects-297821e4.vercel.app/) - your feedback and contributions are welcome!
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
