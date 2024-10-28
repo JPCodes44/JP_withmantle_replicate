@@ -1,22 +1,89 @@
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { ReactNode } from "react";
+
 // Define a type for each navigation link item
 export type NavLink = {
   key: string;
   label: string;
   href: string;
-  subLinks?: Array<{ label: string; href: string }>;
+  subLinks?: Array<{
+      icon: string | StaticImport;
+      title: ReactNode;
+      description?: ReactNode; label: string; href: string 
+}>;
 };
 
-// Define NAV_LINKS as an array of NavLink objects
 export const NAV_LINKS: NavLink[] = [
-  { key: "products", label: "Products", href: "/products", subLinks: [
-      { label: "Migrate from Carta", href: "/products/carta" },
-      { label: "409A Valuations", href: "/products/409a" },
-      { label: "Blog", href: "/products/blog" },
-  ] },
-  { key: "solutions", label: "Solutions", href: "/solutions" },
+  { 
+    key: "products", 
+    label: "Products", 
+    href: "/products", 
+    subLinks: [
+      {
+        label: "Cap Table Management", 
+        href: "/products/cap-table-management",
+        icon: "/balance.png",
+        title: "Cap Table Management",
+        description: "Visualize your Cap Table and company ownership"
+      },
+      {
+        label: "Planning & Forecasting", 
+        href: "/products/planning-forecasting",
+        icon: "/chart.png", // Add the correct icon path if available
+        title: "Planning & Forecasting",
+        description: "Model your pro forma and option plan in one click"
+      },
+      {
+        label: "LP Automation", 
+        href: "/products/lp-automation",
+        icon: "/colosseum.png", // Add the correct icon path if available
+        title: "LP Automation",
+        description: "Streamline private investment management in one place"
+      },
+    ] 
+  },
+  { key: "solutions", label: "Solutions", href: "/solutions", subLinks: [
+    {
+      label: "For Founders", 
+      href: "/solutions/founders", 
+      icon: "/pie.png", 
+      title: "For Founders",
+      description: "Next-level equity management tools built to scale"
+    },
+    {
+      label: "For Limited Partners", 
+      href: "/solutions/limited-partners", 
+      icon: "/colosseum.png", 
+      title: "For Limited Partners",
+      description: "Simplify investment workflows within one portal"
+    },
+    {
+      label: "For Law Firms", 
+      href: "/solutions/law-firms", 
+      icon: "/balance.png", 
+      title: "For Law Firms",
+      description: "Help clients issue equity, plan for the future, and stay compliant"
+    }
+  ]},
   { key: "resources", label: "Resources", href: "/resources", subLinks: [
-      { label: "Resource 1", href: "/resources/1" },
-      { label: "Resource 2", href: "/resources/2" },
+    {
+      label: "Migrate from Carta", href: "/products/carta", 
+      icon: "/image.png",
+      title: "Migrate from Carta",
+      description: undefined
+    },
+    {
+      label: "409A Valuations", href: "/products/409a",
+      icon: "/image.png",
+      title: "409A Valuations",
+      description: undefined
+    },
+    {
+      label: "Blog", href: "/products/blog",
+      icon: "/image.png",
+      title: "Blog",
+      description: undefined
+    },
   ] },
 ];
 
