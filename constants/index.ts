@@ -1,8 +1,26 @@
-export const NAV_LINKS = [
-    { href: '/', key: 'products', label: 'Products' },
-    { href: '/', key: 'solutions', label: 'Solutions' },
-    { href: '/', key: 'resources', label: 'Resources' },
-  ];
+// Define a type for each navigation link item
+export type NavLink = {
+  key: string;
+  label: string;
+  href: string;
+  subLinks?: Array<{ label: string; href: string }>;
+};
+
+// Define NAV_LINKS as an array of NavLink objects
+export const NAV_LINKS: NavLink[] = [
+  { key: "products", label: "Products", href: "/products", subLinks: [
+      { label: "Migrate from Carta", href: "/products/carta" },
+      { label: "409A Valuations", href: "/products/409a" },
+      { label: "Blog", href: "/products/blog" },
+  ] },
+  { key: "solutions", label: "Solutions", href: "/solutions" },
+  { key: "resources", label: "Resources", href: "/resources", subLinks: [
+      { label: "Resource 1", href: "/resources/1" },
+      { label: "Resource 2", href: "/resources/2" },
+  ] },
+];
+
+
 
 // constants.ts
 export const FEATURE_CARDS = [

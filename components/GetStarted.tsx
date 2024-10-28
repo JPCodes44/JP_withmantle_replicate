@@ -14,7 +14,7 @@ const GetStarted = () => {
         </p>
         
         {/* Buttons */}
-        <div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+        <div className="flex flex-col justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
           <button className="w-full sm:w-auto px-8 py-4 rounded-full border border-white text-white text-lg hover:bg-white hover:text-black transition">
             See a Demo
           </button>
