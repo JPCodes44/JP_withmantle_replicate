@@ -1,4 +1,3 @@
-import FeatureCard from "@/components/FeatureCard";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import HeroSection from "@/components/HeroSection"; // Assuming HeroSection is in components
