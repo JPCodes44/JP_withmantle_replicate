@@ -99,12 +99,12 @@ export const FEATURE_CARDS = [
     {
       title: "Supercharge your workflow",
       description: "Transform tasks such as issuing equity and stakeholder communications into automated workflows.",
-      imageSrc: "/workflow.png",
+      imageSrc: "",
     },
     {
       title: "Make decisions, not mistakes",
       description: "Get in-context advice when you need it, giving you clear insight to make better decisions.",
-      imageSrc: "/workflow.png",
+      imageSrc: "",
     },
   ];
 

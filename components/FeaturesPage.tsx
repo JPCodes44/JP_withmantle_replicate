@@ -2,17 +2,15 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import FeatureCard from "@/components/FeatureCard";
-import { FEATURE_CARDS } from "@/constants";
+import { FEATURE_CARDS } from '@/constants';
 
-const FeaturesPage = () => {
+const FeaturesPage: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
+      ([entry]) => setIsVisible(entry.isIntersecting),
       { threshold: 0.2 }
     );
 
@@ -28,44 +26,24 @@ const FeaturesPage = () => {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="features py-16 bg-[#FAF6F1] transition-all duration-1000 ease-out"
-    >
-      <div className="container mx-auto px-8">
-        {/* Title and Description */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2
-            className={`text-3xl font-bold mb-4 text-black transition-all duration-1000 ease-out transform ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-            }`}
-          >
-            Manage like a pro
-          </h2>
-          <p
-            className={`text-lg text-gray-600 leading-relaxed transition-all duration-1000 ease-out delay-200 transform ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-            }`}
-          >
-            Take control of your ownership with a next-generation platform that
-            lets you track, issue, and manage ownership. Be your own expert and
-            scale back on your professional fees.
+    <section ref={sectionRef} className="features py-16 bg-[#FAF6F1]">
+      <div className="container mx-auto">
+        <div className={`p-10 max-w-4xl mx-auto text-center transition-all duration-1000 ease-out transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}>
+          <h2 className="text-4xl font-bold text-black mb-4">Manage everything in one place with simple, straightforward tools augmented with AI</h2>
+          <p className="text-lg text-gray-600 mb-12">
+            Support at every stage, from your garage to a thriving public company. Seamless assistance throughout your journey.
           </p>
+          <hr className="border-t border-gray-300 mb-12 mx-auto max-w-4xl" />
         </div>
 
-        {/* Feature Cards Grid */}
-        <div className="flex flex-col items-center space-y-8 max-w-4xl mx-auto">
+        <div className="flex flex-col p-8 items-center space-y-8 max-w-4xl mx-auto">
           {FEATURE_CARDS.map((card, index) => (
             <FeatureCard
               key={index}
               title={card.title}
               description={card.description}
               imageSrc={card.imageSrc}
-              className={`transition-all duration-1000 ease-out delay-${
-                300 + index * 100
-              } transform ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-              }`}
+              className={`transition-all duration-1000 ease-out transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}
             />
           ))}
         </div>
