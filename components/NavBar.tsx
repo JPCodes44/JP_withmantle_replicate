@@ -14,11 +14,15 @@ const Navbar = () => {
     };
 
     const toggleDropdown = (key: string) => {
-        setActiveDropdown((prev) => (prev === key ? null : key));
+        setActiveDropdown((prevKey) => (prevKey === key ? null : key));
     };
 
     return (
-        <nav className="bg-[#FAF6F1]/90 border border-gray flex flex-col max-container padding-container fixed top-0 w-full z-50 py-5">
+        <nav
+            className={`bg-[#FAF6F1]/90 ${
+                isMobileMenuOpen ? "" : "border border-gray"
+            } flex flex-col max-container padding-container fixed top-0 w-full z-50 py-5`}
+        >
             {/* Logo Section */}
             <div className="flex items-center">
                 <Link href='/'>
@@ -27,7 +31,61 @@ const Navbar = () => {
 
                 {/* Spacer to push links and buttons to the right */}
                 <div className="flex-grow hidden lg:flex justify-end">
-                    {/* Desktop Menu Items */}
+                    <ul className="flex h-full gap-12 mr-8 mt-2">
+                        {NAV_LINKS.map((link) => (
+                            <li
+                                key={link.key}
+                                className="relative flex items-center cursor-pointer transition-all"
+                                onClick={() => link.subLinks && toggleDropdown(link.key)}
+                            >
+                                <div className="text-black flex items-center space-x-1 group">
+                                    <span className="group-hover:text-[#B3965F] transition-colors">
+                                        {link.label}
+                                    </span>
+                                    {link.subLinks && (
+                                        <img
+                                            src="/arrow.svg"
+                                            alt="Arrow Icon"
+                                            className="w-4 h-4 group-hover:text-[#B3965F]"
+                                        />
+                                    )}
+                                </div>
+
+                                {/* Dropdown Menu for Desktop */}
+                                {link.subLinks && activeDropdown === link.key && (
+                                    <div className="absolute top-full left-0 mt-6 w-72 bg-black text-white rounded-lg p-4 shadow-lg">
+                                        <ul className="space-y-4">
+                                            {link.subLinks.map((subLink, index) => (
+                                                <li key={index} className="flex items-start space-x-3">
+                                                    <Image src={subLink.icon} alt="" width={24} height={24} />
+                                                    <div>
+                                                        <Link href={subLink.href}>
+                                                            <span className="font-semibold text-white">
+                                                                {subLink.title}
+                                                            </span>
+                                                        </Link>
+                                                        <p className="text-gray-400 text-sm">
+                                                            {subLink.description}
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+                            </li>
+                        ))}
+                    </ul>
+                    
+                    {/* Buttons for larger screens */}
+                    <div className="space-x-4 mr-6">
+                        <button className="border border-black px-8 py-2 rounded-full text-black hover:bg-gray-100 font-medium">
+                            Login
+                        </button>
+                        <button className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 font-medium">
+                            Get Started
+                        </button>
+                    </div>
                 </div>
 
                 {/* Hamburger Icon for Mobile */}
